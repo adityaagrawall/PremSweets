@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prem Sweets | 50 Years of Tradition</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Rozha+One&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <video autoplay muted playsinline class="loader-video">
+            <source src="/images/Generate_a_video_1080p_202512271508.mp4" type="video/mp4">
+        </video>
+    </div>
+
+<!-- PREMIUM NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            
+            <!-- Logo -->
+            <a href="index.html" class="nav-brand">
+                <img src="images/Prem Sweets Logo_page-0001.jpg" alt="Prem Sweets Logo" class="nav-logo-img">
+            </a>
+
+            <!-- Desktop Menu (Updated Links) -->
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="sweets.html" class="nav-link">Sweets</a></li>
+                <li><a href="dryfruits.html" class="nav-link">Dry Fruits</a></li>
+                <li><a href="bakery.html" class="nav-link">Bakery</a></li>
+                <li><a href="about.html" class="nav-link">Our Story</a></li>
+            </ul>
+
+            <!-- Mobile Toggle Button -->
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div class="mobile-menu-drawer" id="mobileDrawer">
+            <div class="drawer-header">
+                <span class="drawer-title">Menu</span>
+                <span class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="mobile-link">Home</a></li>
+                <li><a href="sweets.html" class="mobile-link">Sweets</a></li>
+                <li><a href="dryfruits.html" class="mobile-link">Dry Fruits</a></li>
+                <li><a href="bakery.html" class="mobile-link">Bakery</a></li>
+                <li><a href="about.html" class="mobile-link">Our Story</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- NEW HERO SECTION -->
+    <!-- HERO IMAGE SECTION (Responsive) -->
+    <header class="hero-image-wrapper">
+        <div class="hero-img-container">
+            <!-- The <picture> tag automatically swaps images based on screen width -->
+            <picture>
+                <!-- Show this on screens smaller than 768px (Mobile) -->
+                <source media="(max-width: 768px)" srcset="images/hero-mobile.jpg">
+                
+                <!-- Show this on larger screens (Desktop/Tablet) -->
+                <source media="(min-width: 769px)" srcset="images/hero.jpg">
+                
+                <!-- Fallback image -->
+                <img src="images/hero.jpg" alt="Prem Sweets Celebration" class="hero-full-img">
+            </picture>
+            
+            <!-- Optional Overlay if you decide to add text later -->
+            <!-- <div class="hero-overlay-gradient"></div> -->
+        </div>
+    </header>
+
+    <!-- CATEGORIES SECTION (3 Options) -->
+    <section class="categories-section" id="products">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="section-header reveal-on-scroll">
+                <h2 class="cat-heading">Our Collections</h2>
+                <div class="cat-divider"></div>
+            </div>
+
+            <div class="category-grid">
+                
+                <!-- Card 1: Sweets -->
+                <a href="sweets.html" class="modern-card reveal-on-scroll">
+                    <!-- Image path: images/sweets.jpg -->
+                    <div class="card-bg" style="background-image: url('images/sweets.jpg');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Traditional Sweets</h3>
+                        <span class="card-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Bakery -->
+                <a href="bakery.html" class="modern-card reveal-on-scroll" style="transition-delay: 0.1s;">
+                    <!-- Image path: images/bakery.jpg -->
+                    <div class="card-bg" style="background-image: url('images/bakery.jpg');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Premium Bakery</h3>
+                        <span class="card-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Dry Fruits -->
+                <a href="dryfruits.html" class="modern-card reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <!-- Image path: images/dryfruits.jpg -->
+                    <div class="card-bg" style="background-image: url('images/dryfruits.jpg');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Royal Dry Fruits</h3>
+                        <span class="card-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DUAL LUXURY HAMPERS SECTION -->
+    <section class="hampers-dual-section" id="gifting">
+        <div class="container">
+            
+            <!-- Section Heading -->
+            <div class="dual-header">
+                <span class="sub-gold">The Art of Gifting</span>
+                <h2 class="dual-title">Royal Hampers</h2>
+                <div class="divider-gold"></div>
+            </div>
+
+            <!-- Two Hampers Grid (The "Both") -->
+            <div class="dual-grid">
+                
+                <!-- Hamper 1 -->
+                <div class="hamper-product-card">
+                    <div class="hamper-img-frame">
+                        <!-- Image Path: images/hamper1.jpg -->
+                        <img src="images/hamper1.jpg" alt="Royal Gold Hamper" class="hamper-img">
+                    </div>
+                    <h3 class="hamper-name">Festive Hampers</h3>
+                </div>
+
+                <!-- Hamper 2 -->
+                <div class="hamper-product-card">
+                    <div class="hamper-img-frame">
+                        <!-- Image Path: images/hamper2.jpg -->
+                        <img src="images/hamper2.jpg" alt="Premium Silver Hamper" class="hamper-img">
+                    </div>
+                    <h3 class="hamper-name">Wedding Hampers</h3>
+                </div>
+
+            </div>
+
+            <!-- Customization Text & CTA -->
+            <div class="dual-footer">
+                <p class="custom-text">
+                    "Both hampers are fully customizable to suit your taste and budget. <br>
+                    Contact us directly to curate your perfect gift."
+                </p>
+                
+                <div class="dual-actions">
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/message/AY6IQQGWT35ZO1" class="btn-gold-filled">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                    
+                    <!-- Call Button (Triggers Phone Dialer) -->
+                    <!-- Replace the number below with your actual shop phone number -->
+                    <a href="tel:+917000725879" class="btn-gold-outline btn-pop">
+                        <i class="fa-solid fa-phone"></i> Call to Enquire
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ROYAL HERITAGE & FEATURES SECTION -->
+    <section class="heritage-section" id="legacy">
+        
+        <!-- Background Watermark -->
+        <div class="heritage-watermark">50</div>
+
+        <div class="container">
+            
+            <!-- Part 1: The Legacy Story -->
+            <div class="legacy-grid">
+                
+                <!-- Left: Text Content -->
+                <div class="legacy-content reveal-on-scroll">
+                    <span class="legacy-subtitle">Since 1975</span>
+                    <h2 class="legacy-title">Preserving a <br> Sweet Legacy</h2>
+                    <div class="gold-line-left"></div>
+                    
+                    <p class="legacy-desc">
+                        What started as a small kitchen 50 years ago has blossomed into a symbol of trust and taste. 
+                        We believe that true sweetness comes not just from sugar, but from <strong>purity, patience, and passion.</strong>
+                    </p>
+                    
+                    <p class="legacy-desc">
+                        Every recipe is a family heirloom, passed down through generations, ensuring that the taste you love today 
+                        is the same taste your grandparents cherished.
+                    </p>
+
+                    <!-- Animated Counter Badge -->
+                    <div class="counter-badge">
+                        <span class="count-number" data-target="50">0</span>
+                        <span class="count-label">Years of<br>Excellence</span>
+                    </div>
+                </div>
+
+                <!-- Right: Heritage Image (Visual) -->
+                <div class="legacy-image-frame reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="frame-border"></div>
+                    <!-- Replace with an image of your shop owner or old shop photo -->
+                    <img src="images/legacy.jpg" alt="Our Heritage" class="legacy-img">
+                </div>
+            </div>
+
+            <!-- Part 2: The Features (Why Choose Us) -->
+            <div class="features-wrapper reveal-on-scroll" style="transition-delay: 0.3s;">
+                <div class="features-grid">
+                    
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="f-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <h4>Pure Desi Ghee</h4>
+                        <p>We strictly use 100% premium clarified butter for that authentic aroma.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="f-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h4>Handcrafted Love</h4>
+                        <p>No machines can replicate the warmth of sweets made by human hands.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="f-icon"><i class="fa-solid fa-award"></i></div>
+                        <h4>Time-Honored Recipes</h4>
+                        <p>Our secret spices and techniques have remained unchanged for decades.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PREMIUM FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Column 1: Brand & Social -->
+                <div class="footer-col brand-col">
+                    <h2 class="footer-logo">Prem Sweets</h2>
+                    <p class="footer-tagline">स्वाद का संसार, परंपरा के अनुसार</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/premsweetshivpuri?igsh=MTR1cHFqOGt5cTNrNQ==" target="_blank" class="social-btn insta">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/message/AY6IQQGWT35ZO1" target="_blank" class="social-btn whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col links-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sweets.html">Sweets</a></li>
+                        <li><a href="bakery.html">Bakery</a></li>
+                        <li><a href="dryfruits.html">Dry Fruits</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="footer-col contact-col">
+                    <h4 class="footer-heading">Visit Us</h4>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Madhav Chowk, Shivpuri,<br>Madhya Pradesh</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+917000725879">+91 70007 25879</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:premsweetshivpuri@gmail.com">premsweetshivpuri@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Google Map -->
+                <div class="footer-col map-col">
+                    <div class="map-wrapper">
+                        <!-- Embedded Google Map centered on Shivpuri -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.536294709848!2d77.6496!3d25.4358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3970b92490d81b23%3A0xe5426c190146050b!2sPrem%20Sweets!5e0!3m2!1sen!2sin!4v1709228490000!5m2!1sen!2sin" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.app.goo.gl/UssfrbKDcpG4NXZf6?g_st=ipc" target="_blank" class="map-link">
+                        Get Directions <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prem Sweets. All Rights Reserved.</p>
+                <p class="designer-credit">Designed with <i class="fa-solid fa-heart" style="color: #ff4757;"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917000725879" target="_blank" class="fab-whatsapp" title="Chat with us">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js">
+    </script>
+</body>
+</html>

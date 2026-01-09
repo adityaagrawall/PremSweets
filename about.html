@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Prem Sweets</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Rozha+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- GLOBAL & RESET --- */
+        :root {
+            --color-bg: #FAFAF5; 
+            --color-text: #333;
+            --color-accent-red: #800020; 
+            --color-accent-gold: #D4AF37;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--color-bg); font-family: var(--font-body); color: var(--color-text); overflow-x: hidden; }
+
+        /* --- NAVBAR (Same as Home) --- */
+        .navbar {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03); z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-container { width: 90%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo-img { height: 60px; width: auto; }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-link { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-link:hover, .nav-link.active { color: var(--color-accent-red); }
+        .mobile-toggle { display: none; font-size: 1.5rem; color: var(--color-accent-red); cursor: pointer; }
+        
+        /* Mobile Menu */
+        .mobile-menu-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: white; box-shadow: -10px 0 30px rgba(0,0,0,0.1); z-index: 1001; transition: right 0.5s ease; padding: 2rem; }
+        .mobile-menu-drawer.open { right: 0; }
+        .drawer-header { display: flex; justify-content: space-between; margin-bottom: 2rem; }
+        .mobile-nav-links { list-style: none; }
+        .mobile-link { display: block; padding: 15px 0; text-decoration: none; color: #333; font-size: 1.1rem; border-bottom: 1px solid #eee; }
+
+        /* --- HERO: MINIMALIST --- */
+        .about-hero {
+            padding: 8rem 20px 4rem 20px;
+            text-align: center;
+            margin-top: 80px;
+            background-color: #FAFAF5;
+        }
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid var(--color-accent-gold);
+            color: var(--color-accent-gold);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+        .about-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            color: var(--color-accent-red);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        .about-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- STORY SECTION --- */
+        .story-section {
+            padding: 4rem 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .story-img-box {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px; /* Soft corners */
+            overflow: hidden;
+            margin-bottom: 3rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .story-img {
+            width: 100%; height: 100%; object-fit: cover;
+            /* Removed sepia filter so family photo looks natural */
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .dropcap {
+            float: left;
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 10px;
+            color: var(--color-accent-red);
+        }
+
+        /* --- PRODUCT VARIETY STRIP --- */
+        .variety-strip {
+            background-color: white;
+            padding: 4rem 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        .variety-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .variety-item {
+            max-width: 200px;
+        }
+        .v-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent-gold);
+            margin-bottom: 1rem;
+        }
+        .v-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-accent-red);
+            margin-bottom: 0.5rem;
+        }
+        .v-desc { font-size: 0.9rem; color: #666; }
+
+        /* --- REAL ESTATE SECTION --- */
+        .estate-section {
+            padding: 6rem 20px;
+            background-color: #2b0c10; /* Dark premium background */
+            color: white;
+            text-align: center;
+        }
+        .estate-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .estate-tag {
+            color: var(--color-accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .estate-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+        .estate-img-wrapper {
+            width: 100%;
+            height: 400px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .estate-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 10s ease; /* Slow zoom effect */
+        }
+        .estate-img:hover { transform: scale(1.1); }
+        
+        .estate-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-names {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .project-badge {
+            border: 1px solid var(--color-accent-gold);
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: var(--color-accent-gold);
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        /* --- TIMELINE (Mobile Friendly) --- */
+        .timeline-section {
+            padding: 6rem 20px;
+            background-color: white;
+        }
+        .timeline {
+            border-left: 2px solid var(--color-accent-gold);
+            margin-left: 20px;
+            padding-left: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px; /* Adjust based on border/padding */
+            top: 5px;
+            width: 16px; height: 16px;
+            background: var(--color-accent-red);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .year {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-accent-gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .event-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* --- FOUNDER QUOTE --- */
+        .quote-box {
+            padding: 4rem 20px;
+            text-align: center;
+            background-color: #FAFAF5;
+            color: #333;
+            border-top: 5px solid var(--color-accent-red);
+        }
+        .quote-text {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.4;
+        }
+        .quote-author {
+            color: var(--color-accent-red);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* --- FOOTER --- */
+        footer { background:#1a0b0d; color:white; padding:3rem 0; text-align:center; margin-top:0; }
+
+        @media(max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .about-title { font-size: 2.5rem; }
+            .story-img-box { height: 250px; }
+            .timeline { margin-left: 10px; }
+            .estate-title { font-size: 2rem; }
+            .estate-img-wrapper { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/Prem Sweets Logo_page-0001.jpg" alt="Prem Sweets" class="nav-logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sweets.html" class="nav-link">Sweets</a></li>
+                <li><a href="bakery.html" class="nav-link">Bakery</a></li>
+                <li><a href="gifting.html" class="nav-link">Gifting</a></li>
+                <li><a href="about.html" class="nav-link active">Our Story</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        </div>
+        
+        <!-- Mobile Drawer -->
+        <div class="mobile-menu-drawer" id="mobileDrawer">
+            <div class="drawer-header">
+                <span style="font-family:'Playfair Display'; font-size:1.5rem; color:#800020;">Menu</span>
+                <i class="fa-solid fa-xmark" style="font-size:1.5rem;" onclick="toggleMenu()"></i>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="mobile-link">Home</a></li>
+                <li><a href="sweets.html" class="mobile-link">Sweets</a></li>
+                <li><a href="bakery.html" class="mobile-link">Bakery</a></li>
+                <li><a href="about.html" class="mobile-link">Our Story</a></li>
+                <li><a href="contact.html" class="mobile-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header class="about-hero">
+        <span class="hero-badge">Est. 1974</span>
+        <h1 class="about-title">50 Years of<br>Trust & Taste</h1>
+        <p class="about-subtitle">From a humble sweet shop to a legacy of diverse ventures.</p>
+    </header>
+
+    <!-- STORY CONTENT -->
+    <section class="story-section">
+        <div class="story-img-box">
+            <img src="images/family.jpg" alt="The Jain Family" class="story-img">
+        </div>
+        
+        <div class="story-content">
+            <p>
+                <span class="dropcap">I</span>t all began with the vision of our grandfather, <strong>Shri Prem Chandra Jain</strong>. In 1974, he planted the seed of what would become a legacy, starting Prem Sweets with a commitment to pure ingredients and authentic taste. He didn't just sell sweets; he built relationships, treating every customer like family.
+            </p>
+            <p>
+                This foundation of trust was strengthened by the second generation, <strong>Rajesh Jain</strong> and <strong>Rakesh Jain</strong>. With tireless dedication, they transformed the humble shop into a city landmark, significantly expanding our scale and capacity to serve the growing love of our patrons.
+            </p>
+            <p>
+                Today, the tradition evolves in the hands of the third generation. <strong>Pratith Jain</strong> and <strong>Divyansh Jain</strong> have infused modern energy into our heritage. From launching an exclusive <strong>Dry Fruit</strong> vertical to opening a vibrant new <strong>Ice Cream Parlor & Cafe</strong>, they ensure that Prem Sweets remains a timeless destination for every generation.
+            </p>
+        </div>
+    </section>
+
+    <!-- VARIETY STRIP -->
+    <section class="variety-strip">
+        <h3 style="font-family: var(--font-heading); font-size: 2rem; color: #800020;">A World of Flavors</h3>
+        <div class="variety-grid">
+            <div class="variety-item">
+                <div class="v-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+                <div class="v-title">Traditional Sweets</div>
+                <p class="v-desc">Pure Desi Ghee preparations</p>
+            </div>
+            <div class="variety-item">
+                <div class="v-icon"><i class="fa-solid fa-bread-slice"></i></div>
+                <div class="v-title">Artisan Bakery</div>
+                <p class="v-desc">Eggless cakes & cookies</p>
+            </div>
+            <div class="variety-item">
+                <div class="v-icon"><i class="fa-solid fa-gift"></i></div>
+                <div class="v-title">Royal Gifting</div>
+                <p class="v-desc">Luxury dry fruit hampers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW REAL ESTATE SECTION -->
+    <section class="estate-section">
+        <div class="estate-container">
+            <span class="estate-tag">Expanding Horizons</span>
+            <h2 class="estate-title">Building Dreams Beyond Sweets</h2>
+            
+            <div class="estate-img-wrapper">
+                <!-- IMAGE PROMPT 2: Rakesh Dream City Gate -->
+                <img src="images/dreamcity.jpg" alt="Rakesh Dream City Entrance" class="estate-img">
+            </div>
+
+            <div class="estate-desc">
+                <p>
+                    With the same trust that you have placed in our sweets for 50 years, we have ventured into building homes 
+                    that nurture families. Our real estate projects reflect our commitment to quality, transparency, and community living.
+                </p>
+            </div>
+
+            <div class="project-names">
+                <div class="project-badge">Rakesh Dream City</div>
+                <div class="project-badge">Prem Vihar</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section">
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">1974</span>
+                <div class="event-title">The Beginning</div>
+                <p class="event-desc">Shri Prem Chandra Jain lays the foundation of Prem Sweets.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1995</span>
+                <div class="event-title">The Expansion</div>
+                <p class="event-desc">Rajesh Jain & Rakesh Jain modernize the brand and expand the Bakery line.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2015</span>
+                <div class="event-title">Building Dreams</div>
+                <p class="event-desc">Launched <strong>Rakesh Dream City</strong>, marking our entry into trusted Real Estate.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2024</span>
+                <div class="event-title">New Horizons</div>
+                <p class="event-desc">Pratith & Divyansh Jain launch the Ice Cream Parlor & Cafe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-box">
+        <p class="quote-text">"Whether it is the food on your plate or the roof over your head, trust is our most valuable ingredient."</p>
+        <span class="quote-author">- The Prem Group</span>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="color:#bbb; font-size:0.9rem;">&copy; 2025 Prem Sweets. <a href="index.html" style="color:#D4AF37;">Home</a></p>
+    </footer>
+
+    <!-- Simple JS for Menu -->
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            if (drawer.style.right === '0px') {
+                drawer.style.right = '-100%';
+            } else {
+                drawer.style.right = '0px';
+            }
+        }
+    </script>
+
+</body>
+</html>
