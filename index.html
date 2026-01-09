@@ -17,12 +17,6 @@
 </head>
 <body>
 
-    <!-- Loading Screen -->
-    <div id="loader">
-        <video autoplay muted playsinline class="loader-video">
-            <source src="/images/Generate_a_video_1080p_202512271508.mp4" type="video/mp4">
-        </video>
-    </div>
 
 <!-- PREMIUM NAVIGATION -->
     <nav class="navbar" id="navbar">
@@ -71,13 +65,13 @@
             <!-- The <picture> tag automatically swaps images based on screen width -->
             <picture>
                 <!-- Show this on screens smaller than 768px (Mobile) -->
-                <source media="(max-width: 768px)" srcset="images/hero-mobile.jpg">
+                <source media="(max-width: 768px)" srcset="images/hero-mobile.webp">
                 
                 <!-- Show this on larger screens (Desktop/Tablet) -->
-                <source media="(min-width: 769px)" srcset="images/hero.jpg">
+                <source media="(min-width: 769px)" srcset="images/hero.webp">
                 
                 <!-- Fallback image -->
-                <img src="images/hero.jpg" alt="Prem Sweets Celebration" class="hero-full-img">
+                <img src="images/hero.webp" alt="Prem Sweets Celebration" class="hero-full-img">
             </picture>
             
             <!-- Optional Overlay if you decide to add text later -->
@@ -99,7 +93,7 @@
                 <!-- Card 1: Sweets -->
                 <a href="sweets.html" class="modern-card reveal-on-scroll">
                     <!-- Image path: images/sweets.jpg -->
-                    <div class="card-bg" style="background-image: url('images/sweets.jpg');"></div>
+                    <div class="card-bg" style="background-image: url('images/sweets.webp');"></div>
                     <div class="card-overlay"></div>
                     <div class="card-content">
                         <h3>Traditional Sweets</h3>
@@ -110,7 +104,7 @@
                 <!-- Card 2: Bakery -->
                 <a href="bakery.html" class="modern-card reveal-on-scroll" style="transition-delay: 0.1s;">
                     <!-- Image path: images/bakery.jpg -->
-                    <div class="card-bg" style="background-image: url('images/bakery.jpg');"></div>
+                    <div class="card-bg" style="background-image: url('images/bakery.webp');"></div>
                     <div class="card-overlay"></div>
                     <div class="card-content">
                         <h3>Premium Bakery</h3>
@@ -121,7 +115,7 @@
                 <!-- Card 3: Dry Fruits -->
                 <a href="dryfruits.html" class="modern-card reveal-on-scroll" style="transition-delay: 0.2s;">
                     <!-- Image path: images/dryfruits.jpg -->
-                    <div class="card-bg" style="background-image: url('images/dryfruits.jpg');"></div>
+                    <div class="card-bg" style="background-image: url('images/dryfruits.webp');"></div>
                     <div class="card-overlay"></div>
                     <div class="card-content">
                         <h3>Royal Dry Fruits</h3>
@@ -151,7 +145,7 @@
                 <div class="hamper-product-card">
                     <div class="hamper-img-frame">
                         <!-- Image Path: images/hamper1.jpg -->
-                        <img src="images/hamper1.jpg" alt="Royal Gold Hamper" class="hamper-img">
+                        <img src="images/hamper1.webp" loading="lazy" alt="Royal Gold Hamper" class="hamper-img">
                     </div>
                     <h3 class="hamper-name">Festive Hampers</h3>
                 </div>
@@ -160,7 +154,7 @@
                 <div class="hamper-product-card">
                     <div class="hamper-img-frame">
                         <!-- Image Path: images/hamper2.jpg -->
-                        <img src="images/hamper2.jpg" alt="Premium Silver Hamper" class="hamper-img">
+                        <img src="images/hamper2.webp" loading="lazy" alt="Premium Silver Hamper" class="hamper-img">
                     </div>
                     <h3 class="hamper-name">Wedding Hampers</h3>
                 </div>
@@ -229,7 +223,7 @@
                 <div class="legacy-image-frame reveal-on-scroll" style="transition-delay: 0.2s;">
                     <div class="frame-border"></div>
                     <!-- Replace with an image of your shop owner or old shop photo -->
-                    <img src="images/legacy.jpg" alt="Our Heritage" class="legacy-img">
+                    <img src="images/legacy.webp" alt="Our Heritage" class="legacy-img">
                 </div>
             </div>
 

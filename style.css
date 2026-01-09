@@ -41,39 +41,6 @@ body {
 /* Hindi Text Styling */
 .hi-text { font-family: var(--font-heading-hi); }
 
-/* Loader Container */
-    #loader {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-color: #ffffff;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* Animation for website reveal (Slide Up) */
-        transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-    }
-
-    /* Hide loader by sliding it up */
-    #loader.slide-up {
-        transform: translateY(-100%);
-    }
-
-    /* Video Styling */
-    .loader-video {
-        max-width: 600px;
-        width: 100%;
-        height: auto;
-        /* FIX: Start invisible to hide black border/flash */
-        opacity: 0; 
-        transition: opacity 0.5s ease-in;
-    }
-
-    /* Helper to fade video in only when playing */
-    .loader-video.playing {
-        opacity: 1;
-    }
-
 /* --- PREMIUM NAVBAR STYLES (Upgraded) --- */
        /* --- PREMIUM NAVBAR STYLES (Glassmorphism & Smart Scroll) --- */
     .navbar {
